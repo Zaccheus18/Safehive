@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Home, Program, About, Contact, NavigationBar, Footer, Background } from '@/pages/dashboard';
+import { Home, Program, About, Contact, NavigationBar, Footer } from '@/pages/dashboard';
 import '../public/css/tailwind.css';
 import Favicon from 'react-favicon';
 
