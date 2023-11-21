@@ -8,4 +8,5 @@ tensorflow-estimator==2.6.0  # Updated to a compatible version
 tensorflow-io-gcs-filesystem==0.21.0  # Adjusted version
 urllib3==1.26.7  # Adjusted to a version that exists
 uvicorn==0.15.0  # Adjusted to a version that exists
-typing-extensions==3.10.0.2  # Specify a version that might resolve the issue
+typing-extensions==4.0.1  # Use a version that might resolve the issue
+
