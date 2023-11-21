@@ -1,12 +1,10 @@
-fastapi==0.68.0  # Use a version that exists and works for your project
-fastjsonschema==2.18.1
-h5py==3.3.0  # Use a version that exists and works for your project
-keras==2.14.0
-opencv-python-headless==4.8.1.78
-tensorflow==2.14.0
-tensorflow-estimator==2.14.0
-tensorflow-intel==2.14.0
-tensorflow-io-gcs-filesystem==0.31.0
-urllib3==2.0.7
-uvicorn==0.24.0.post1
-
+fastapi==0.68.0
+fastjsonschema==2.15.0  # Updated to a newer version
+h5py==3.4.0  # Updated to a newer version
+keras==2.6.0
+opencv-python-headless==4.5.3.56  # Adjusted version
+tensorflow==2.6.0  # Updated to a compatible version
+tensorflow-estimator==2.6.0  # Updated to a compatible version
+tensorflow-io-gcs-filesystem==0.21.0  # Adjusted version
+urllib3==1.26.7  # Adjusted to a version that exists
+uvicorn==0.15.0  # Adjusted to a version that exists
