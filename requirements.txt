@@ -1,6 +1,6 @@
 fastapi==0.68.0  # Use a version that exists and works for your project
 fastjsonschema==2.18.1
-h5py==3.10.0
+h5py==3.3.0  # Use a version that exists and works for your project
 keras==2.14.0
 opencv-python-headless==4.8.1.78
 tensorflow==2.14.0
