@@ -10,4 +10,5 @@ urllib3==1.26.7  # Adjusted to a version that exists
 uvicorn==0.15.0  # Adjusted to a version that exists
 typing-extensions==4.0.1  # Use a version that might resolve the issue
 Pillow==8.4.0  # Use a version that works for your project
+matplotlib==3.5.1  # Use a version that works for your project
 
