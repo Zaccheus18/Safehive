@@ -95,12 +95,13 @@ async def predict_crowd_density(file: UploadFile = File(...), threshold: int = F
         'estimatedCount': int(est_count),
         'crowdStatus': crowd_status,
         'crowdDensityFrequency': crowd_freq,
-        'crowdDensity': f"../uploads/cd_heatmap.png"
+        'crowdDensity': f"/uploads/cd_heatmap.png"
     }
 
     return response
 
-@app.get('../uploads/{filename}')
+
+@app.get('/uploads/{filename}')
 async def uploaded_file(filename):
     return FileResponse(os.path.join(UPLOAD_DIRECTORY, filename))
 
