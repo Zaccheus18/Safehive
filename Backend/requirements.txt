@@ -5,3 +5,5 @@ numpy==1.21.4
 matplotlib==3.5.0
 tensorflow==2.7.0  # or the version compatible with your Keras version
 protobuf==3.17.3
+python-multipart==0.0.5
+
