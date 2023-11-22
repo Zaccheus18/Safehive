@@ -1,14 +1,6 @@
 fastapi==0.68.0
-fastjsonschema==2.15.0  # Updated to a newer version
-h5py==3.4.0  # Updated to a newer version
-keras==2.6.0
-opencv-python-headless==4.5.3.56  # Adjusted version
-tensorflow==2.6.0  # Updated to a compatible version
-tensorflow-estimator==2.6.0  # Updated to a compatible version
-tensorflow-io-gcs-filesystem==0.21.0  # Adjusted version
-urllib3==1.26.7  # Adjusted to a version that exists
-uvicorn==0.15.0  # Adjusted to a version that exists
-typing-extensions==4.0.1  # Use a version that might resolve the issue
-Pillow==8.4.0  # Use a version that works for your project
-matplotlib==3.5.1  # Use a version that works for your project
-
+uvicorn==0.15.0
+Pillow==8.4.0
+numpy==1.21.4
+matplotlib==3.5.0
+tensorflow==2.7.0  # or the version compatible with your Keras version
