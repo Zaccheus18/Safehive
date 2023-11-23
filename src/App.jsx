@@ -4,7 +4,7 @@ import '../public/css/tailwind.css';
 import Favicon from 'react-favicon';
 
 const App = () => {
-  const [faviconUrl, setFaviconUrl] = useState('/img/favicon.png');
+  const [faviconUrl, setFaviconUrl] = useState('img/favicon.png');
 
   return (
     <div className="relative z-10">
