@@ -81,7 +81,7 @@ def frequency_status(prediction_count, threshold):
 
     return crowd_status, crowd_freq
 
-@app.post('/')
+@app.post('/predict')  # Updated route to match the endpoint the frontend is targeting
 async def predict_crowd_density(file: UploadFile = File(...), threshold: int = Form(...)):
     file_path = os.path.join(UPLOAD_DIRECTORY, 'temp.jpg')
     with open(file_path, 'wb') as buffer:
@@ -111,5 +111,5 @@ async def predict_crowd_density(file: UploadFile = File(...), threshold: int = F
 if __name__ == '__main__':
     if not os.path.exists(UPLOAD_DIRECTORY):
         os.makedirs(UPLOAD_DIRECTORY)
-    uvicorn.run(app, host='0.0.0.0', port=8000)
+    uvicorn.run(app, host='127.0.0.1', port=8000)
 
