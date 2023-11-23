@@ -85,6 +85,7 @@ async def predict_crowd_density(file: UploadFile = File(...), threshold: int = F
     est_count = count
     crowd_status, crowd_freq = frequency_status(count, threshold)
 
+    # Your logic for heatmap generation
     plt.imshow(hmap.reshape(hmap.shape[1], hmap.shape[2]), cmap=c.jet)
     plt.axis('off')
     heatmap_path = os.path.join(UPLOAD_DIRECTORY, 'cd_heatmap.png')
@@ -100,12 +101,8 @@ async def predict_crowd_density(file: UploadFile = File(...), threshold: int = F
 
     return response
 
-
-@app.get('../uploads/{filename}')
-async def uploaded_file(filename):
-    return FileResponse(os.path.join(UPLOAD_DIRECTORY, filename))
-
 if __name__ == '__main__':
     if not os.path.exists(UPLOAD_DIRECTORY):
         os.makedirs(UPLOAD_DIRECTORY)
     uvicorn.run(app, host='0.0.0.0', port=8000)
+
