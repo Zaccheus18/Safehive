@@ -14,9 +14,10 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["https://safehive.vercel.app"],  # Update with your frontend URL
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Allowing all HTTP methods, you can specify specific methods if needed
+    allow_headers=["*"],  # Allowing all headers, you can specify specific headers if needed
 )
+
 
 UPLOAD_DIRECTORY = os.path.join(os.path.dirname(__file__), 'uploads')
 
