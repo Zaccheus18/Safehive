@@ -10,7 +10,13 @@ from fastapi.responses import FileResponse
 import uvicorn
 
 app = FastAPI()
-app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://safehive.vercel.app"],  # Update with your frontend URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 UPLOAD_DIRECTORY = os.path.join(os.path.dirname(__file__), 'uploads')
 
