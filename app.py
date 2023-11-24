@@ -111,5 +111,5 @@ async def predict_crowd_density(file: UploadFile = File(...), threshold: int = F
 if __name__ == '__main__':
     if not os.path.exists(UPLOAD_DIRECTORY):
         os.makedirs(UPLOAD_DIRECTORY)
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+    uvicorn.run(app, host='0.0.0.0', port=8000)
 
