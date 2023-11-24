@@ -83,7 +83,7 @@ def frequency_status(prediction_count, threshold):
 
 @app.post('/predict')  # Updated route to match the endpoint the frontend is targeting
 async def predict_crowd_density(file: UploadFile = File(...), threshold: int = Form(...)):
-    file_path = os.path.join(UPLOAD_DIRECTORY, '/img/uploads/temp.jpg')
+    file_path = os.path.join(UPLOAD_DIRECTORY, 'temp.jpg')
     with open(file_path, 'wb') as buffer:
         buffer.write(await file.read())
 
