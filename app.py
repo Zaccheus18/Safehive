@@ -19,14 +19,14 @@ app.add_middleware(
 )
 
 
-UPLOAD_DIRECTORY = os.path.join(os.path.dirname(__file__), 'uploads')
+UPLOAD_DIRECTORY = os.path.join(os.path.dirname(__file__), '/uploads')
 
 def load_model():
-    json_file = open('models/Model.json', 'r')
+    json_file = open('/models/Model.json', 'r')
     loaded_model_json = json_file.read()
     json_file.close()
     loaded_model = model_from_json(loaded_model_json)
-    loaded_model.load_weights("weights/model_A_weights.h5")
+    loaded_model.load_weights("/weights/model_A_weights.h5")
     return loaded_model
 
 def create_img(path):
@@ -103,7 +103,7 @@ async def predict_crowd_density(file: UploadFile = File(...), threshold: int = F
         'estimatedCount': int(est_count),
         'crowdStatus': crowd_status,
         'crowdDensityFrequency': crowd_freq,
-        'crowdDensity': f"uploads/cd_heatmap.png"
+        'crowdDensity': f"/uploads/cd_heatmap.png"
     }
 
     return response
