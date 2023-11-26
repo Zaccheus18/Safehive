@@ -17,7 +17,7 @@ export function Contact() {
 
   const sendEmail = () => {
     const recipient = 'frenchie.chua@wvsu.edu.ph';
-    const subject = 'Message from Contact Form';
+    const subject = 'Message from Safehive Form';
     const body = `Name: ${nameRef.current.value}\nEmail: ${emailRef.current.value}\nMessage: ${messageRef.current.value}`;
     window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
   };
@@ -35,7 +35,7 @@ export function Contact() {
                 type="text"
                 placeholder="Your Name"
                 required
-                inputref={nameRef}
+                ref={nameRef} // Change inputref to ref here
               />
             </div>
             <div>
@@ -45,7 +45,7 @@ export function Contact() {
                 type="email"
                 placeholder="Your Email"
                 required
-                inputref={emailRef}
+                ref={emailRef} // Change inputref to ref here
               />
             </div>
             <div>
@@ -54,7 +54,7 @@ export function Contact() {
                 id="message"
                 placeholder="Your Message"
                 required
-                inputref={messageRef}
+                ref={messageRef} // Change inputref to ref here
               />
             </div>
             <Button
