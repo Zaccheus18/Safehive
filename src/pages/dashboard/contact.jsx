@@ -16,9 +16,14 @@ export function Contact() {
   const sendEmail = () => {
     const recipient = 'frenchie.chua@wvsu.edu.ph';
     const subject = 'Message from Safehive Form';
-    const body = `Name: ${nameRef.current.value}\nEmail: ${emailRef.current.value}\nMessage: ${messageRef.current.value}`;
+    const name = nameRef.current ? nameRef.current.value : '';
+    const email = emailRef.current ? emailRef.current.value : '';
+    const message = messageRef.current ? messageRef.current.value : '';
+  
+    const body = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
     window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
   };
+    
 
   return (
     <div className="flex flex-col lg:flex-row lg:items-center justify-center lg:justify-between" style={{ minHeight: "680px" }}>
