@@ -5,6 +5,7 @@ import { CameraIcon } from "@heroicons/react/24/outline";
 import LoadingOverlay from "./layouts/LoadingOverlay.jsx";
 import PromptMessage from "./layouts/PromptMessage.jsx"; // Import the PromptMessage component
 import "./layouts/style.css";
+import '../public/css/tailwind.css';
 
 const getBorderStyle = (freq) => {
   let baseStyle = `mx-10 border-8`;
@@ -107,8 +108,7 @@ const DragDropFile = ({
   
   return (
     <div className={`relative`}>
-
-      <div className={`mb-5 mt-5 px-10 relative ${getBorderStyle(crowdDensityFrequency)}`}>
+      <div className={`mb-5 mt-5 px-5 md:px-10 relative ${getBorderStyle(crowdDensityFrequency)}`}>
         <LoadingOverlay loading={loading} />
 
         <CardBody className="p-4">

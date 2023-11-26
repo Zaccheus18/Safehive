@@ -62,11 +62,10 @@
 }
 
 
-/* In your CSS or Tailwind config */
 .bg-custom-blue {
   position: relative;
-  background-color: #0073f5; /* Your desired color */
-  overflow: hidden; /* Ensures the gradient doesn't overflow the container */
+  background-color: #0073f5;
+  overflow: hidden;
 }
 
 .bg-custom-blue::before {
@@ -74,16 +73,12 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%; /* Double the width to ensure the gradient covers the whole container */
+  width: 200%;
   height: 100%;
-  background: linear-gradient(135deg, transparent 50%, #ffffff 0); /* Adjust the gradient and positioning as needed */
-  transform: rotate(-45deg); /* Rotates the gradient to create the slant effect */
-
+  background: linear-gradient(135deg, transparent 50%, #ffffff 0);
+  transform: rotate(-45deg);
 }
 
-/* styles.css */
-
-/* For smaller screens */
 @media (max-width: 768px) {
   .text-3xl {
     font-size: 2.5rem;
@@ -94,7 +89,6 @@
   /* ... other responsive styles ... */
 }
 
-/* For larger screens */
 @media (min-width: 769px) {
   .text-3xl {
     font-size: 4rem;
@@ -104,4 +98,3 @@
   }
   /* ... other responsive styles ... */
 }
-

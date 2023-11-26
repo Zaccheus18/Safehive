@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DragDropFile from "@/widgets/cards/draganddrop";
+import '../public/css/tailwind.css';
 
 export function Program() {
   const [file, setFile] = useState(null);
