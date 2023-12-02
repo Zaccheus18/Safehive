@@ -70,7 +70,7 @@ const DragDropFile = ({
       formData.append("threshold", threshold);
 
       const response = await fetch("https://safehive-backend.onrender.com/predict", {
-        method: "GET",
+        method: "POST",
         body: formData,
       });
 
