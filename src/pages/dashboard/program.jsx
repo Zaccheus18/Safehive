@@ -24,7 +24,7 @@ export function Program() {
       const response = await fetch("https://safehive-backend.onrender.com/predict", {
         method: "POST",
         body: formData,
-        // The headers for FormData are set automatically; no need to specify them explicitly
+
       });
 
       if (response.ok) {

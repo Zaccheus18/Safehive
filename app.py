@@ -81,7 +81,7 @@ def frequency_status(prediction_count, threshold):
 
     return crowd_status, crowd_freq
 
-@app.post('/predict')  # Ensure that your backend endpoint is configured for POST requests
+@app.get('/predict')  # Ensure that your backend endpoint is configured for POST requests
 async def predict_crowd_density(file: UploadFile = File(...), threshold: int = Form(...)):
     file_path = os.path.join(UPLOAD_DIRECTORY, 'temp.jpg')
     with open(file_path, 'wb') as buffer:
