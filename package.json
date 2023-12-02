@@ -25,6 +25,7 @@
     "react-helmet": "^6.1.0",
     "react-router-dom": "6.4.2",
     "react-spring": "^9.7.3",
+    "proxy": "https://safehive-backend.onrender.com/predict",
     "three": "^0.157.0"
   },
   "devDependencies": {

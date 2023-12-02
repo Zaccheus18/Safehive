@@ -12,7 +12,7 @@ import uvicorn
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://safehive.vercel.app"],  # Update with your frontend URL
+    allow_origins=["*"],  # Update with your frontend URL
     allow_credentials=True,
     allow_methods=["*"],  # Allowing all HTTP methods, you can specify specific methods if needed
     allow_headers=["*"],  # Allowing all headers, you can specify specific headers if needed
