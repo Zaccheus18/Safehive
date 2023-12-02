@@ -15,7 +15,7 @@ app.add_middleware(
 )
 
 
-UPLOAD_DIRECTORY = os.path.join(os.path.dirname(__file__), '/img/uploads')
+UPLOAD_DIRECTORY = os.path.join(os.path.dirname(__file__), 'uploads')
 
 def load_model():
     json_file = open('/models/Model.json', 'r')
@@ -104,7 +104,7 @@ async def predict_crowd_density(file: UploadFile = File(...), threshold: int = F
 
     return response
 
-@app.get('{filename}')
+@app.get('/uploads/{filename}')
 async def uploaded_file(filename):
     return FileResponse(os.path.join(UPLOAD_DIRECTORY, filename))
 
