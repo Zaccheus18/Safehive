@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import DragDropFile from "@/widgets/cards/draganddrop";
 
-
 export function Program() {
   const [file, setFile] = useState(null);
   const [threshold, setThreshold] = useState("");
@@ -25,6 +24,7 @@ export function Program() {
       const response = await fetch("https://safehive-backend.onrender.com/predict", {
         method: "POST",
         body: formData,
+        // The headers for FormData are set automatically; no need to specify them explicitly
       });
 
       if (response.ok) {
