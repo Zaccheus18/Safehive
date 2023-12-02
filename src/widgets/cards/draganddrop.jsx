@@ -5,7 +5,6 @@ import { CameraIcon } from "@heroicons/react/24/outline";
 import LoadingOverlay from "./layouts/LoadingOverlay.jsx";
 import PromptMessage from "./layouts/PromptMessage.jsx"; // Import the PromptMessage component
 import "./layouts/style.css";
-import '../public/css/tailwind.css';
 
 const getBorderStyle = (freq) => {
   let baseStyle = `mx-10 border-8`;
@@ -62,23 +61,23 @@ const DragDropFile = ({
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
+
     try {
       setLoading(true);
-  
+
       const formData = new FormData();
       formData.append("file", file);
       formData.append("threshold", threshold);
-  
+
       const response = await fetch("https://safehive-backend.onrender.com/predict", {
-        method: "POST", // Explicitly setting the HTTP method to 'POST'
+        method: "POST",
         body: formData,
       });
-  
+
       if (response.ok) {
         const data = await response.json();
         const { estimatedCount, crowdStatus, crowdDensityFrequency, crowdDensity } = data;
-  
+
         setHeatmapUrl(crowdDensity);
         onSubmit(threshold, estimatedCount, crowdStatus, crowdDensityFrequency);
         setShowBorder(true);
@@ -91,7 +90,6 @@ const DragDropFile = ({
       setLoading(false);
     }
   };
-  
 
   useEffect(() => {
     setHeatmapUrl(crowdDensity);
@@ -108,13 +106,16 @@ const DragDropFile = ({
   
   return (
     <div className={`relative`}>
-      <div className={`mb-5 mt-5 px-5 md:px-10 lg:px-20 relative ${getBorderStyle(crowdDensityFrequency)}`}>
+
+      <div className={`mb-5 mt-5 px-10 relative ${getBorderStyle(crowdDensityFrequency)}`}>
         <LoadingOverlay loading={loading} />
 
-          <CardBody className="p-4">
-            <form onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="md:col-span-2">
+        <CardBody className="p-4">
+        <form onSubmit={handleSubmit}>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="col-span-3">
+              <div className="grid grid-cols-3 gap-6">
+                <div className="col-span-2">
                   <div
                     className={`border-2 border-blue-200 border-dashed p-4 rounded-lg mb-5 pb-10 pt-10 justify-center ${
                       showBorder ? "border-b-0" : ""
@@ -164,7 +165,7 @@ const DragDropFile = ({
                     )}
                   </div>
                 </div>
-                <div className="md:col-span-1">
+                <div className="col-span-1">
                   <div className="border border-blue-gray-200 p-4 mb-4 rounded-lg">
                     <label className="text-blue-gray">Set Threshold:</label>
                     <div className="flex items-center gap-2 mt-2">
@@ -199,8 +200,8 @@ const DragDropFile = ({
                   )}
                 </div>
               </div>
-            
-         
+            </div>
+          </div>
         </form>
         </CardBody>
       
