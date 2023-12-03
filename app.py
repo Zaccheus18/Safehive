@@ -81,11 +81,13 @@ def frequency_status(prediction_count, threshold):
 
     return crowd_status, crowd_freq
 
-@app.route('/predict')  # Ensure that your backend endpoint is configured for POST requests
+@app.post('/predict')  # Ensure that your backend endpoint is configured for POST requests
 async def predict_crowd_density(file: UploadFile = File(...), threshold: int = Form(...)):
     file_path = os.path.join(UPLOAD_DIRECTORY, 'temp.jpg')
     with open(file_path, 'wb') as buffer:
-        buffer.write(await file.read())
+        # Read and write the uploaded file content to a local file
+        content = await file.read()
+        buffer.write(content)
 
     count, img, hmap = predict(file_path)
 
@@ -93,7 +95,7 @@ async def predict_crowd_density(file: UploadFile = File(...), threshold: int = F
     crowd_status, crowd_freq = frequency_status(count, threshold)
 
     # Your logic for heatmap generation
-    plt.imshow(hmap.reshape(hmap.shape[1], hmap.shape[2]), cmap=c.jet)
+    plt.imshow(hmap.reshape(hmap.shape[1], hmap.shape[2]), cmap='jet')  # Update the colormap if needed
     plt.axis('off')
     heatmap_path = os.path.join(UPLOAD_DIRECTORY, 'cd_heatmap.png')
     plt.savefig(heatmap_path, bbox_inches='tight', pad_inches=0)
@@ -103,7 +105,7 @@ async def predict_crowd_density(file: UploadFile = File(...), threshold: int = F
         'estimatedCount': int(est_count),
         'crowdStatus': crowd_status,
         'crowdDensityFrequency': crowd_freq,
-        'crowdDensity': f"/uploads/cd_heatmap.png"
+        'crowdDensity': f"/uploads/cd_heatmap.png"  # Update the path as needed
     }
 
     return response
