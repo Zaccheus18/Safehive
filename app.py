@@ -110,7 +110,7 @@ async def predict_crowd_density(file: UploadFile = File(...), threshold: int = F
 
     return response
 
-@app.route('/uploads/{file}')
+@app.get('/uploads/{file}')
 async def uploaded_file(file):
     return FileResponse(os.path.join(UPLOAD_DIRECTORY, file))
 
