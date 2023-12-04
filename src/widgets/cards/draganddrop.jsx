@@ -76,8 +76,7 @@ const DragDropFile = ({
 
       if (response.ok) {
         const data = await response.json();
-        const { crowdStatus, crowdDensityFrequency, crowdDensity } = data;
-        const estimatedCount = parseInt('10');
+        const { estimatedCount, crowdStatus, crowdDensityFrequency, crowdDensity } = data;
 
         setHeatmapUrl(crowdDensity);
         onSubmit(threshold, estimatedCount, crowdStatus, crowdDensityFrequency);

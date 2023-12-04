@@ -24,6 +24,7 @@ export function Program() {
       const response = await fetch("https://safehive-backend.onrender.com/predict", {
         method: "POST",
         body: formData,
+
       });
 
       if (response.ok) {
