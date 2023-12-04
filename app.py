@@ -82,7 +82,6 @@ def frequency_status(prediction_count, threshold):
     return crowd_status, crowd_freq
 
 @app.post('/predict')
-@app.get('/predict')
 async def predict_crowd_density(file: UploadFile = File(None), threshold: int = 0):
     if file is not None:
         file_path = os.path.join(UPLOAD_DIRECTORY, 'temp.jpg')
@@ -109,8 +108,6 @@ async def predict_crowd_density(file: UploadFile = File(None), threshold: int = 
         }
 
         return response
-    else:
-        return {"message": "Please use a POST request with a file."}
 
 @app.get('/uploads/{filename}')
 async def uploaded_file(filename):
